@@ -38,7 +38,8 @@ spec:
   selector:
     app: rollout-bluegreen
   ports:
-  - protocol: TCP
+  - name: active
+    protocol: TCP
     port: 80
     targetPort: 8080
     nodePort: 30081
@@ -54,7 +55,8 @@ spec:
   selector:
     app: rollout-bluegreen
   ports:
-  - protocol: TCP
+  - name: preview
+    protocol: TCP
     port: 80
     targetPort: 8080
     nodePort: 30082
