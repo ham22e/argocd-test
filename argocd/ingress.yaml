@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-  - host: active.ap-cst.site
+  - host: active.mimistory.kr
     http:
       paths:
       - path: /
@@ -21,7 +21,7 @@ spec:
             name: rollout-bluegreen-active 
             port:
               number: 80
-  - host: preview.ap-cst.site      
+  - host: preview.mimistory.kr      
     http:
       paths:
       - path: /
