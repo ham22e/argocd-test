@@ -7,20 +7,24 @@ metadata:
     alb.ingress.kubernetes.io/load-balancer-name: "test-alb-bg"
     alb.ingress.kubernetes.io/ncloud-loadbalancer-retain-public-ip-on-termination: "true"
     alb.ingress.kubernetes.io/description: "test-alb-blue-green"
-#    alb.ingress.kubernetes.io/public-ip-instance-no: "114531823"
+    alb.ingress.kubernetes.io/public-ip-instance-no: "114533909"
 spec:
   ingressClassName: alb
   rules:
-  - http:
+  - host: active.ap-cst.site
+    http:
       paths:
-      - path: /active 
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: rollout-bluegreen-active 
             port:
               number: 80
-      - path: /preview
+  - host: preview.ap-cst.site      
+    http:
+      paths:
+      - path: /
         pathType: Prefix
         backend:
           service:
