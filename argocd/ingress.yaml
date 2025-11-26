@@ -17,13 +17,13 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: active
+            name: rollout-bluegreen-active 
             port:
               number: 80
       - path: /preview
         pathType: Prefix
         backend:
           service:
-            name: preview
+            name: rollout-bluegreen-preview
             port:
               number: 80
