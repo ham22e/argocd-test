@@ -19,11 +19,11 @@ spec:
           service:
             name: rollout-bluegreen-active 
             port:
-              number: 8080
+              number: 80
       - path: /preview
         pathType: Prefix
         backend:
           service:
             name: rollout-bluegreen-preview
             port:
-              number: 8080
+              number: 80
